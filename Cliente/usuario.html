@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/css/bootstrap.css" rel="stylesheet">
+    <title>Cliente Biometria - Usuario</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Usuario</h1>
+        <div class="row">
+            <div class="card col-md-4">
+                <h2>Datos del usuario</h2>
+                <div class="form-group">
+                    <div class="col-md-12">
+                        <label for="txt_nombre">ID</label>
+                        <input type="text" class="form-control" id="txt_id" readonly>
+                    </div>
+                </div> 
+                <div class="form-group">
+                    <div class="col-md-12">
+                        <label for="txt_nombre">Nombre</label>
+                        <input type="text" class="form-control" id="txt_nombre" readonly>
+                    </div>
+                </div>    
+                <div class="form-group">
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="camera">
+                                    <video id="video" style="width:100%;height:100%;">Video stream not available.</video>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <input type="button" class="btn btn-secondary btn-block" id="startbutton" value="Inicializar Video" onclick="startup()">
+                                <input type="button" class="btn btn-secondary btn-block" id="stopbutton" value="Detener Video" onclick="stopVideo()">
+                                <br>
+                                <input type="button" class="btn btn-secondary btn-block" value="Tomar Foto" onclick="takepicture()">
+                                
+                                <input type="button" class="btn btn-secondary btn-block" id="subirFoto" value="Cargar Foto" onclick="subirFotoUsuario()">
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div class="form-group">
+                    <div class="col-md-12">
+                        <canvas id="canvas" hidden></canvas>
+                        <div class="output">
+                            <img id="photo" alt="The screen capture will appear in this box."> 
+                        </div>
+                    </div>
+                </div>   
+            </div>
+            <div class="card col-md-8">
+                <div class="form-group">
+                    <h2>Imagenes</h2>
+                    <div class="form-group">
+                        <div class="row" id="listaImagenes">
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <h2>Imagenes Entrenamiento</h2>
+                    <div class="form-group">
+                        <div class="row" id="listaImagenesEntrenamiento">
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    
+    <script src="/js/jquery-3.0.0.js" type="text/javascript"></script>
+    <script src="/js/umd/popper.js" type="text/javascript"></script>
+    <script src="/js/bootstrap.js" type="text/javascript"></script>
+
+    <script src="/js/App/AJAXgeneral.js" type="text/javascript"></script>
+    <script src="/js/App/usuario.js" type="text/javascript"></script>
+    <script src="/js/App/webCam.js" type="text/javascript"></script>
+</body>
+</html>
